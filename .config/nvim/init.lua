@@ -25,7 +25,14 @@ ccc.setup({
 vim.keymap.set("n", "<C-c>", "<cmd>CccPick<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-c>", "<cmd>CccPick<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_hl(0, "GitGraphTimestamp", { italic = true, fg = "#334d4d" })
+-- ############# GitGraph format
+vim.api.nvim_set_hl(0, "GitGraphTimestamp", { fg = "#1a9999" })
+vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { italic = true, fg = "#e6e6e6" })
+
+vim.api.nvim_set_hl(0, "GitGraphBranchTag", { fg = "#e63333" })
+vim.api.nvim_set_hl(0, "GitGraphBranchName", { bold = true, fg = "#33b333" })
+vim.api.nvim_set_hl(0, "GitGraphAuthor", { fg = "#336666" })
+vim.api.nvim_set_hl(0, "GitGraphHash", { fg = "#663333" })
 
 local function set_highlight_with_hex_and_format(group, hex_color, bold, italic, underline)
   -- Replace spaces or other delimiters with underscores in group names

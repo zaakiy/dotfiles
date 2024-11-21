@@ -34,7 +34,7 @@ return {
     format = {
       --timestamp = '%H:%M %d-%m-%Y',
       timestamp = "  %H:%M     %b %d   󰸘 %Y     %A      ",
-      fields = { "branch_name", "hash", "timestamp", "author", "tag" },
+      fields = { "branch_name", "tag", "hash", "timestamp", "author" },
     },
     hooks = {
       -- Check diff of a commit
