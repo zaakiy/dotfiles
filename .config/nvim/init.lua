@@ -1,17 +1,13 @@
 require("config.lazy")
 
-
-
-
 vim.cmd("set clipboard+=unnamedplus")
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
-
 
 -- Scrollbar color
 vim.api.nvim_set_hl(0, "ScrollView", { bg = "#585ca8" })
 
 -- ############# mini-ai: select Around/Inside text
-require('mini.ai').setup()
+require("mini.ai").setup()
 
 -- ############# CCC colorpicker: Create Color Code
 vim.opt.termguicolors = true
@@ -26,18 +22,15 @@ ccc.setup({
   },
 })
 
-vim.keymap.set('n', '<C-c>', '<cmd>CccPick<CR>', { noremap = true, silent = true })
-vim.keymap.set('i', '<C-c>', '<cmd>CccPick<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-c>", "<cmd>CccPick<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-c>", "<cmd>CccPick<CR>", { noremap = true, silent = true })
 
-
-
-
-
+vim.api.nvim_set_hl(0, "GitGraphTimestamp", { italic = true, fg = "#334d4d" })
 
 local function set_highlight_with_hex_and_format(group, hex_color, bold, italic, underline)
   -- Replace spaces or other delimiters with underscores in group names
   local sanitized_group = group:gsub("%s+", "_")
-  
+
   -- Prepare highlight properties
   local properties = { fg = hex_color }
   properties.bold = bold or nil
@@ -57,14 +50,11 @@ local function set_highlights_by_keyword(keyword, hex_color, bold, italic, under
 end
 
 -- Set highlights for specific keywords
-set_highlights_by_keyword("function", "#c9d996", false, false)  -- Function highlights
-set_highlights_by_keyword("variable", "#9cdcfe", false, false)  -- Variable highlights
-set_highlights_by_keyword("property", "#ad99f5", false, true)   -- Property highlights with italic
-set_highlights_by_keyword("string", "#ce9178", false, false)    -- String highlights
-set_highlights_by_keyword("boolean", "#569cd6", false, true)    -- Boolean highlights with italic
-
-
-
+set_highlights_by_keyword("function", "#c9d996", false, false) -- Function highlights
+set_highlights_by_keyword("variable", "#9cdcfe", false, false) -- Variable highlights
+set_highlights_by_keyword("property", "#ad99f5", false, true) -- Property highlights with italic
+set_highlights_by_keyword("string", "#ce9178", false, false) -- String highlights
+set_highlights_by_keyword("boolean", "#569cd6", false, true) -- Boolean highlights with italic
 
 -- ############# Aerial (Code outlie window)
 require("aerial").setup({
@@ -73,7 +63,7 @@ require("aerial").setup({
     width = nil,
     min_width = 10,
   },
--- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
   on_attach = function(bufnr)
     -- Jump forwards/backwards with '{' and '}'
     vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
@@ -100,7 +90,7 @@ require("aerial").setup({
     "Method",
     "Struct",
   },
-    
+
   -- Determines where the aerial window will be opened
   --   edge   - open aerial at the far right/left of the editor
   --   window - open aerial to the right/left of the current window
@@ -110,10 +100,6 @@ require("aerial").setup({
 vim.keymap.set("n", "<leader>aa", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })
 vim.keymap.set("n", "<leader>as", "<cmd>Telescope aerial<CR>", { desc = "Symbol Search" })
 
-
-
-
-
 -- Override highlights for added and removed text in Diffview
 --vim.cmd([[
 --  highlight DiffAdd guifg=NONE guibg=#005500
@@ -122,11 +108,7 @@ vim.keymap.set("n", "<leader>as", "<cmd>Telescope aerial<CR>", { desc = "Symbol 
 --  highlight DiffText guifg=NONE guibg=#004400
 --]])
 
-
 -- Override highlights for inline text changes
 --vim.api.nvim_set_hl(0, "DiffviewDiffAddAsDelete", { fg = "NONE", bg = "#550000", bold = false })
 --vim.api.nvim_set_hl(0, "DiffviewDiffDelete", { fg = "NONE", bg = "#550000", bold = false })
 --vim.api.nvim_set_hl(0, "DiffviewDiffAdd", { fg = "NONE", bg = "#007700", bold = false })
-
-
-
