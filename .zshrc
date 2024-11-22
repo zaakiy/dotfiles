@@ -29,7 +29,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	brew install jesseduffield/lazygit/lazygit #lazygit
   	brew install typescript typescript-language-server
 
-    installNvimPlugins
   fi
 
   # set brew environment on Mac
@@ -43,7 +42,6 @@ else
     sudo apt install nala -y
     sudo nala install -y gcc bat zoxide ripgrep xclip tmux neovim nodejs npm node-typescript 
     
-    installNvimPlugins
   fi
 fi
 
