@@ -125,5 +125,10 @@ bindkey '^@' fzf-history-widget
 
 export EDITOR=nvim
 
+if [ -f ~/secrets.sh ]; then
+  source ~/secrets.sh
+else
+  echo "No secrets file found at ~/secrets.sh"
+fi
 
 
