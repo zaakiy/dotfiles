@@ -128,7 +128,8 @@ export EDITOR=nvim
 if [ -f ~/secrets.sh ]; then
   source ~/secrets.sh
 else
-  echo "No secrets file found at ~/secrets.sh"
+  touch ~/secrets.sh
+  echo "Created a new secrets file at ~/secrets.sh"
 fi
 
 
