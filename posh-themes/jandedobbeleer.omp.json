@@ -219,6 +219,19 @@
         }
       ],
       "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": " \udb81\udf34 ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
     }
   ],
   "console_title_template": "{{ .Shell }} in {{ .Folder }}",
