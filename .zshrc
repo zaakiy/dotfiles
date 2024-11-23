@@ -7,6 +7,8 @@ if [[ ! "$(uname)" == "Darwin" ]]; then
 fi
 
 
+export SHORTHOSTNAME=$(hostname -s)
+
 # If Mac OS
 if [[ "$(uname)" == "Darwin" ]]; then 
   # Check if Homebrew is installed; if not, install it
