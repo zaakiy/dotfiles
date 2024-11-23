@@ -135,7 +135,7 @@ fi
 
 
 if command -v brew &>/dev/null; then
-  if [ -f ~/dotfiles/captureBrewInstalls.sh]; then
+  if [ -f ~/dotfiles/captureBrewInstalls.sh ]; then
     ~/dotfiles/captureBrewInstalls.sh
     echo "Brew installs captured in ~/dotfiles/brewInstalls.sh"
   else
