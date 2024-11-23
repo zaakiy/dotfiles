@@ -9,7 +9,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": "{{ if eq .OS \"darwin\" }} \ue711 macOS {{ else if eq .OS \"windows\" }} \ue70f Windows {{ else if eq .OS \"linux\" }}{{ if eq .Env.OS_NAME \"Amazon Linux\" }} \uf270 Amazon Linux {{ else if eq .Env.OS_NAME \"Ubuntu\" }} \uf31b Ubuntu {{ else }} \uf128 Linux {{ end }}{{ else }} \uf128 Unknown OS {{ end }}",
+          "template": "{{ .UserName }}@{{ .Env.SHORTHOSTNAME }}{{ if eq .OS \"darwin\" }} \ue711 macOS {{ else if eq .OS \"windows\" }} \ue70f Windows {{ else if eq .OS \"linux\" }}{{ if eq .Env.OS_NAME \"Amazon Linux\" }} \uf270 Amazon Linux {{ else if eq .Env.OS_NAME \"Ubuntu\" }} \uf31b Ubuntu {{ else }} \uf128 Linux {{ end }}{{ else }} \uf128 Unknown OS {{ end }}",
           "trailing_diamond": "\ue0b0",
           "type": "session"
         },
