@@ -39,13 +39,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   
 
-else
+elif [[ "$OS_NAME" == "Ubuntu" ]]; then
   if ! command -v nala &>/dev/null; then
     # Other items are probably also not installed
     sudo apt update
     sudo apt install nala -y
     sudo nala install -y gcc bat zoxide ripgrep xclip tmux neovim nodejs npm node-typescript 
-    
   fi
 fi
 
