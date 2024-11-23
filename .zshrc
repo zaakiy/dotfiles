@@ -1,6 +1,10 @@
 
 export TERM=xterm-256color
 
+export EDITOR=nvim
+if [[ ! "$(uname)" == "Darwin" ]]; then 
+  export OS_NAME=$(cat /etc/os-release | grep ^NAME= |  awk -F'=' '{gsub(/"/, "", $2); print $2}')
+fi
 
 
 # If Mac OS
@@ -128,7 +132,6 @@ bindkey '^@' fzf-history-widget
 
 
 
-export EDITOR=nvim
 
 if [ -f ~/secrets.sh ]; then
   source ~/secrets.sh
