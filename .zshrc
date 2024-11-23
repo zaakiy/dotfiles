@@ -19,18 +19,18 @@ if [[ "$(uname)" == "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     brew install gcc
     
-	# Install each app with the function
-	# brew install fzf       # For ** fuzzy find file/directory searches
-	brew install bat       # Like cat but with better formatting
-	brew install zoxide    # Faster directory changing (like cd)
-	brew install ripgrep   # Search and replace for LazyVim using leader s r
-	brew install thefuck   # Command suggestions
-	brew install xclip     # Clipboard support for Neovim
-	brew install tmux      # tmux for text-based windowing
-	brew install neovim
-	git clone https://github.com/LazyVim/starter ~/.config/nvim
-	rm -rf ~/.config/nvim/.git
-	brew install jesseduffield/lazygit/lazygit #lazygit
+    # Install each app with the function
+    # brew install fzf       # For ** fuzzy find file/directory searches
+    brew install bat       # Like cat but with better formatting
+    brew install zoxide    # Faster directory changing (like cd)
+    brew install ripgrep   # Search and replace for LazyVim using leader s r
+    brew install thefuck   # Command suggestions
+    brew install xclip     # Clipboard support for Neovim
+    brew install tmux      # tmux for text-based windowing
+    brew install neovim
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    brew install jesseduffield/lazygit/lazygit #lazygit
   	brew install typescript typescript-language-server
 
   fi
