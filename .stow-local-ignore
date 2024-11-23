@@ -3,3 +3,4 @@ secrets.sh
 .config/nvim/lazy-lock.json
 captureBrewInstalls.sh
 brewInstalls.sh
+posh-themes
