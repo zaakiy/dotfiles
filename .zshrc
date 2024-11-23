@@ -133,3 +133,16 @@ else
 fi
 
 
+
+if command -v brew &>/dev/null; then
+  if [ -f ~/dotfiles/captureBrewInstalls.sh]; then
+    ~/dotfiles/captureBrewInstalls.sh
+    echo "Brew installs captured in ~/dotfiles/brewInstalls.sh"
+  else
+    echo "~/dotfiles/captureBrewInstalls.sh not found"
+  fi
+else
+  echo "Brew not found, therefore no brew installs to capture"
+fi
+
+
