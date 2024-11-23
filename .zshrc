@@ -54,10 +54,15 @@ bindkey -r '^S'
 autoload -Uz compinit
 compinit -u  # Use -u to suppress insecure directories warning
 
-# Enable Powerlevel10k instant prompt. Keep this at the top.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+########### replaced p10k with oh-my-posh
+# # Enable Powerlevel10k instant prompt. Keep this at the top.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+
+eval "$(oh-my-posh init zsh --config ~/dotfiles/posh-themes/jandedobbeleer.omp.json )"
+# eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/jandedobbeleer.omp.json)"
 
 # Zinit setup
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -77,7 +82,7 @@ zinit light-mode for \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-history-substring-search \
     zsh-users/zsh-syntax-highlighting \
-    ohmyzsh/ohmyzsh
+    ohmyzsh/ohmyzsh \
 
 # install fzf if not already installed
 # this need to go AFTER ohmyzsh
@@ -90,11 +95,11 @@ if [ ! -d "$HOME/.fzf" ]; then
 fi
 
 # Load Powerlevel10k
-zinit ice depth=1
-zinit light romkatv/powerlevel10k
+# zinit ice depth=1
+# zinit light romkatv/powerlevel10k
 
 # Load Powerlevel10k configuration if it exists
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ############# MAC ONLY!
 # iTerm2 shell integration
