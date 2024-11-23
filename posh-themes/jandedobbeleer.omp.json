@@ -18,12 +18,12 @@
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "folder_separator_icon": " \ue0b1 ",
+            "folder_separator_icon": "/",
             "home_icon": "~",
-            "style": "folder"
+            "style": "full"
           },
           "style": "powerline",
-          "template": " \uea83  {{ .Path }} ",
+          "template": " \uf07b  {{ .Path }} ",
           "type": "path"
         },
         {
