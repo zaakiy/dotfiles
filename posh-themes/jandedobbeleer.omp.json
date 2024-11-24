@@ -7,7 +7,6 @@
         {
           "background": "#3386f1",
           "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
           "style": "diamond",
           "template": "{{ .UserName }}@{{ .Env.SHORTHOSTNAME }}{{ if eq .OS \"darwin\" }} \ue711 macOS {{ else if eq .OS \"windows\" }} \ue70f Windows {{ else if eq .OS \"linux\" }}{{ if eq .Env.OS_NAME \"Amazon Linux\" }} \uf270 Amazon Linux {{ else if eq .Env.OS_NAME \"Ubuntu\" }} \uf31b Ubuntu {{ else }} \uf128 Linux {{ end }}{{ else }} \uf128 Unknown OS {{ end }}",
           "trailing_diamond": "\ue0b0",
@@ -234,11 +233,14 @@
       "segments": [
         {
           "type": "command",
-          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
           "foreground": "#F8F8F3",
-          "background": "#6572A0",
+          "background": "#3386f1",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
           "properties": {
-            "command": "if [[ -n $TMUX ]]; then echo \"tmux $(tmux display-message -p '#I. #W') ❯\" ; else echo '❯'; fi",
+            "command": "if [[ -n $TMUX ]]; then echo \"tmux $(tmux display-message -p '#I. #W')\" ; else echo ''; fi",
             "prefix": "",
             "shell": "bash"
           }
