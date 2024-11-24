@@ -225,9 +225,19 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffffff",
+          "type": "command",
           "style": "plain",
-          "template": " \udb81\udf34 ",
+          "foreground": "yellow",
+          "properties": {
+            "command": "if [ -n \"$TMUX\" ]; then tmux display-message -p '#W'; fi",
+            "prefix": "",
+            "shell": "bash"
+          }
+        },
+        {
+          "foreground": "#A692D8",
+          "style": "plain",
+          "template": " ❯ ",
           "type": "text"
         }
       ],
