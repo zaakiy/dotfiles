@@ -23,7 +23,7 @@
             "style": "full"
           },
           "style": "powerline",
-          "template": " \uf07b  {{ .Path }} ",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
@@ -208,10 +208,18 @@
           "type": "battery"
         },
         {
+          "background": "#cc8099",
+          "foreground": "#111111",
+          "invert_powerline": true,
+          "powerline_symbol": "\ue0b2",
+          "style": "powerline",
+          "template": " • {{ .Env.Location }}{{ .Env.AWSSYDNEY }}{{.Env.AWSCALI}}",
+          "type": "time"
+        },
+        {
           "background": "#2e9599",
           "foreground": "#111111",
           "invert_powerline": true,
-          "leading_diamond": "\ue0b2",
           "style": "diamond",
           "template": " {{ .CurrentDate | date .Format }} ",
           "trailing_diamond": "\ue0b4",
@@ -227,18 +235,13 @@
         {
           "type": "command",
           "style": "plain",
-          "foreground": "yellow",
+          "foreground": "#F8F8F3",
+          "background": "#6572A0",
           "properties": {
-            "command": "if [ -n \"$TMUX\" ]; then tmux display-message -p '#W'; fi",
+            "command": "if [[ -n $TMUX ]]; then echo \"tmux $(tmux display-message -p '#I. #W') ❯\" ; else echo '❯'; fi",
             "prefix": "",
             "shell": "bash"
           }
-        },
-        {
-          "foreground": "#A692D8",
-          "style": "plain",
-          "template": " ❯ ",
-          "type": "text"
         }
       ],
       "type": "prompt"

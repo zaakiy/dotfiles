@@ -9,8 +9,8 @@ fi
 
 export SHORTHOSTNAME=$(hostname -s)
 
-# Reset the tmux environment variable so oh-my-posh doesn't assume we're in tmux
-export TMUX=
+
+
 
 # If Mac OS
 if [[ "$(uname)" == "Darwin" ]]; then 
