@@ -26,12 +26,12 @@
           "type": "path"
         },
         {
-          "background": "#99d1ff",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#ff9966{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}",
+            "#4ffa7b"
           ],
           "foreground": "#1a1a1a",
           "leading_diamond": "\ue0b6",
